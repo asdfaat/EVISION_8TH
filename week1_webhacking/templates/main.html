@@ -34,17 +34,20 @@
                 </form>
             </div>
             
-            <div style="margin-bottom: 10px;">
-                검색: {{ query }}
-            </div>
-
+            {% if query %}
+                <div style="margin-bottom: 10px;">
+                    검색: {{ query | safe }} 
+                    <!--jinja2는 자동 이스케이프가 수행되므로 | safe를 붙여 해당 변수는 안전하다고 표시-->
+                </div>
+            {% endif %}
+            
             <!--현재 방명록 리스트-->
             <div style="margin-top: 10px;">
 
                 <!--items의 값들을 순회하며 writer와 message 값 표시-->
                 {% for i in items %}
                     <div style="padding: 5px;">
-                        {{ i.writer }} : {{ i.message }}
+                        {{ i.writer | safe }} : {{ i.message | safe }}
                     </div>
 
                 <!--items에 값이 없을 경우-->
