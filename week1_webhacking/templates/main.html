@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Guest Book</title>
+    <style> /*단을 나누기 위한 CSS 부분*/
+        .container {
+            display: flex;  /*가로 정렬*/
+        }
+        
+        .list {
+            flex: 1; /*동일 비율로*/
+            width: 100%;
+        }
+        .write {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Guest Book</h1>
+    <div class="container">
+        <div class="list">
+            <h2>list</h2>
+            
+
+            <!--방명록 검색-->
+            <div style="margin-bottom: 10px;">
+                <!--GET 방식으로 [server]/search?q= ... 형태로 url 쿼리 전달 -->
+                <form action="/search" method="GET">
+                    <input type="text" name="q" placeholder="검색어 입력" style="width: 70%; margin-right: 5px;">
+                    <button type="submit" style="width: 10%;">검색</button>
+                </form>
+            </div>
+            
+            <div style="margin-bottom: 10px;">
+                검색: {{ query }}
+            </div>
+
+            <!--현재 방명록 리스트-->
+            <div style="margin-top: 10px;">
+
+                <!--items의 값들을 순회하며 writer와 message 값 표시-->
+                {% for i in items %}
+                    <div style="padding: 5px;">
+                        {{ i.writer }} : {{ i.message }}
+                    </div>
+
+                <!--items에 값이 없을 경우-->
+                {% else %}
+                    <p>empty</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="write">
+            <h2>write</h2>
+            
+            <!--방명록 작성-->
+            <form action="/write" method="POST">
+                <div style="margin-bottom: 10px;">
+                    <input type="text" name="writer" placeholder="작성자 입력", style="width: 20%;">
+                    <button type="submit" style="width: 10%;">등록</button>
+                </div>
+
+                <div style="margin-top: 10px;">
+                    <textarea name="message" style="width: 70%; height: 120px; resize: none;" placeholder="메시지 입력"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
