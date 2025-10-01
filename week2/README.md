@@ -21,8 +21,11 @@ apache:
        - eg. ``` INSERT INTO `users`(`username`, `password`) VALUES ('asdf','asdf') ```
 4. http://localhost/login_project/login.html 에서 실행!
    - 아이디와 패스워드 입력
+     
      <img width="307" height="207" alt="image" src="https://github.com/user-attachments/assets/de39cc64-dbaa-4a51-9ad2-a2826bfef4f2" />
+     
    - 로그인 확인
+     
      <img width="211" height="107" alt="image" src="https://github.com/user-attachments/assets/15a62195-5fb2-465a-931b-344e7ec54e79" />
      <img width="319" height="160" alt="image" src="https://github.com/user-attachments/assets/ffb45d9f-612f-4768-ab42-fd507854327e" />
 
