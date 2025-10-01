@@ -8,8 +8,8 @@ mysql:
 apache:
 
 ## 실행 방법
-1. C:\xampp\htdocs\login_project에 login.html과 login_preocess.php 파일 저장
-2. DB 생성
+### 1. C:\xampp\htdocs\login_project에 login.html과 login_preocess.php 파일 저장
+### 2. DB 생성
    > 1) xampp에서 apache와 mysql 실행
    > 2) http://localhost/phpmyadmin에 접속해 my_db 데이터베이스 생성
    > 3) 'users'라는 이름의 컬럼 세 개를 가진 테이블 생성
@@ -20,7 +20,7 @@ apache:
    >       - password: 로그인에 사용할 password, VARCHAR, 길이 255
    > 5) 필요한 데이터 삽입
    >     - eg. ``` INSERT INTO `users`(`username`, `password`) VALUES ('asdf','asdf') ```
-3. http://localhost/login_project/login.html 에서 실행!
+### 3. http://localhost/login_project/login.html 에서 실행!
    - 아이디와 패스워드 입력
      
      <img width="307" height="207" alt="image" src="https://github.com/user-attachments/assets/de39cc64-dbaa-4a51-9ad2-a2826bfef4f2" />
